@@ -1,5 +1,5 @@
 package Vidéotheque;
 
-public class prog {
+public class Prog {
     
 }

@@ -1,5 +1,5 @@
 package Vidéotheque;
 
-public class film {
+public class Film {
     
 }
