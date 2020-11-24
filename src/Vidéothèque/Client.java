@@ -16,7 +16,11 @@ public class Client {
         this.limitFilms = 5;
     }
 
-    public void Louer(Film film) {
+    public void louer(Film film) {
 
+    }
+
+    public Film[] getFilms() {
+        return this.films;
     }
 }
