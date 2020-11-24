@@ -1,4 +1,5 @@
 package Vidéothèque;
+import java.util.*;
 
 public class Film {
     public String Nom;
@@ -11,7 +12,6 @@ public class Film {
         Nom = sc.nextLine();
         System.out.print("Quelle est le nom de l'acteur principal? ");  
         Acteur = sc.nextLine();
-        System.out.print("Le film #{Nom} à bien été crée");  
-
+        System.out.print("Le film #{Nom} à bien été crée");
     }
 }

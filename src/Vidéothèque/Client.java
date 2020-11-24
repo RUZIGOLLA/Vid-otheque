@@ -1,4 +1,5 @@
 package Vidéothèque;
+import java.util.*;
 
 public class Client {
     private String nom;
@@ -6,7 +7,7 @@ public class Client {
     private String adresse;
     private String mail;
     private Integer limitFilms;
-    private Film[] films;
+    private List<Film> films;
 
     public Client(String nom, String prenom, String adresse, String mail) {
         this.nom = nom;
@@ -17,15 +18,20 @@ public class Client {
     }
 
     public boolean louer(Film film) {
-        if (this.films.length < this.limitFilms) {
-            this.films = push(this.films, film);
+        if (this.films.size() < this.limitFilms) {
+            this.films.add(film);
             return true;
         } else {
             return false;
         }
     }
 
-    public Film[] getFilms() {
+    public List<Film> getFilms() {
         return this.films;
+    }
+
+    public String toString() {
+        String result = "Client : " + nom + " " + prenom;
+        return result;
     }
 }
