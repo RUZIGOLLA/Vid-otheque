@@ -16,8 +16,13 @@ public class Client {
         this.limitFilms = 5;
     }
 
-    public void louer(Film film) {
-
+    public boolean louer(Film film) {
+        if (this.films.length < this.limitFilms) {
+            this.films = push(this.films, film);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Film[] getFilms() {
