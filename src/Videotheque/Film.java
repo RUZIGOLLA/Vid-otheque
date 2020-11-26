@@ -8,10 +8,10 @@ public class Film {
     public String Real;
     public Film() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Quelle est le nom du film? ");  
+        System.out.println("Quelle est le nom du film? ");
         Nom = sc.nextLine();
-        System.out.print("Quelle est le nom de l'acteur principal? ");  
+        System.out.println("Quelle est le nom de l'acteur principal? ");
         Acteur = sc.nextLine();
-        System.out.print("Le film #{Nom} à bien été crée");
+        System.out.println("Le film " + this.Nom + " à bien été crée");
     }
 }

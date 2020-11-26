@@ -7,7 +7,7 @@ public class Client {
     private String adresse;
     private String mail;
     private Integer limitFilms;
-    private List<Film> films;
+    private ArrayList<Film> films;
 
     public Client() {
         Scanner sc = new Scanner(System.in);
