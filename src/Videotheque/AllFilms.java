@@ -58,9 +58,10 @@ public class AllFilms {
         System.out.println("Aucun film de ce nom n'a été trouvé");
     }
 
-    public void GetFilmDispo() {
+
+    public void GetFilmDispo(Boolean bool) {
         for (Film film : listeFilm) {
-            if (!film.isLouer) {
+            if (film.isLouer == bool) {
                 film.ToString();
             }
         }
