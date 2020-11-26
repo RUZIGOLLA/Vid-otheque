@@ -9,11 +9,19 @@ public class Client {
     private Integer limitFilms;
     private List<Film> films;
 
-    public Client(String nom, String prenom, String adresse, String mail) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.mail = mail;
+    public Client() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Quel est votre prénom ? ");
+        this.prenom = sc.nextLine();
+        System.out.println("Quel est votre nom de famille ? ");
+        this.nom = sc.nextLine();
+        System.out.println("Quel est votre adresse ? ");
+        this.adresse = sc.nextLine();
+        System.out.println("Quel est votre adresse email ? ");
+        this.mail = sc.nextLine();
+
+
         this.limitFilms = 5;
     }
 
