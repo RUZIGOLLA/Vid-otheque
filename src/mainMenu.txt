@@ -1,0 +1,7 @@
+1. Ajouter un film
+2. Recherche d'un film
+3. Liste des films disponibles
+4. Liste des films loués
+5. Liste des films par support
+
+9. Exit

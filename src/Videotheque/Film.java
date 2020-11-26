@@ -10,24 +10,24 @@ public class Film {
     public String Type;
     public Film() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Quelle est le nom du film? ");  
+        System.out.print("Quelle est le nom du film? ");
         Nom = sc.nextLine();
-        System.out.print("Quelle est le nom de l'acteur principal? ");  
+        System.out.print("Quelle est le nom de l'acteur principal? ");
         Acteur = sc.nextLine();
-        System.out.print("Quelle est le nom du réalisateur ? ");  
+        System.out.print("Quelle est le nom du réalisateur ? ");
         Real = sc.nextLine();
-        System.out.print("Quelle est l'annee de sortie du film? ");  
+        System.out.print("Quelle est l'annee de sortie du film? ");
         AnneeSortie = sc.nextLine();
         getType();
         
-        System.out.print("Le film #{Nom} à bien été crée");
+        System.out.println("Le film {#Nom} à bien été crée");
     }
 
     public void getType() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Quelle est le type de support du film? (veuillez écrire le chiffre correspondant à votre choix");  
-        System.out.print("1.K7    2.Clé Usb    3.Blue-Ray      4.DVD");  
+        System.out.println("Quelle est le type de support du film? (veuillez écrire le chiffre correspondant à votre choix");
+        System.out.println("1.K7    2.Clé Usb    3.Blue-Ray      4.DVD");
         int i = sc.nextInt();
         switch (i) {
             case 1:
@@ -46,6 +46,6 @@ public class Film {
     }
 
     public void ToString() {
-        System.out.print("#{Nom} #{Acteur} #{AnneeSortie} #{Realisateur} #{Type}");
+        System.out.println("#{Nom} #{Acteur} #{AnneeSortie} #{Realisateur} #{Type}");
     }
 }
