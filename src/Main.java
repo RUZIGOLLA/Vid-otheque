@@ -17,11 +17,11 @@ public class Main {
 
         do {
 
-            while (choice == null || (choice < 1 || choice > 5) && choice != 9) {
+            do {
                 clearConsole();
                 showMenu("mainMenu.txt");
                 choice = convertStringToInt(fs.nextLine());
-            }
+            } while (choice == null || (choice < 1 || choice > 5) && choice != 9);
 
             switch (choice) {
                 case 1 -> addFilm();
