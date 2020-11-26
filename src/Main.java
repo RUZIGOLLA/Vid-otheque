@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Main {
     public List<Integer> arrianePath = new ArrayList<>();
-    public static ArrayList<Film> films =  new ArrayList<Film>();
+    public static AllFilms films = new AllFilms();
 
     public static void main(String[] args) {
         mainMenu();
@@ -12,11 +12,9 @@ public class Main {
 
     private static void mainMenu() {
         Scanner fs = new Scanner(System.in);
-
         Integer choice = null;
 
         do {
-
             do {
                 clearConsole();
                 showMenu("mainMenu.txt");
@@ -24,10 +22,10 @@ public class Main {
             } while (choice == null || (choice < 1 || choice > 5) && choice != 9);
 
             switch (choice) {
-                case 1 -> addFilm();
+                case 1 -> films.addFilm();
             }
-
         } while (choice != 9);
+
         clearConsole();
 
     }
@@ -46,11 +44,6 @@ public class Main {
         }
     }
 
-    private static void addFilm() {
-        Film film = new Film();
-        films.add(film);
-    }
-
     private static Integer convertStringToInt(String choice) {
         try {
             return Integer.parseInt(choice);
@@ -58,6 +51,24 @@ public class Main {
             return null;
         }
     }
+
+    private void searchMenu() {
+        Scanner fs = new Scanner(System.in);
+        Integer choice = null;
+
+        do {
+            do {
+                clearConsole();
+                showMenu("searchMenu.txt");
+                choice = convertStringToInt(fs.nextLine());
+            } while (choice == null || (choice < 1 || choice > 4) && choice != 9);
+
+            switch (choice) {
+                case 1 -> films.researchFilm();
+            }
+        } while (choice != 9);
+    }
+
 
     public static void clearConsole()
     {

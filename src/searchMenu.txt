@@ -1,0 +1,7 @@
+Recherche par :
+1. Nom
+2. Acteur
+3. Année
+4. Réalisateur
+
+9. Retour au menu principal

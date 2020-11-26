@@ -1,18 +1,18 @@
 package Videotheque;
 import java.util.*;
 
-public class AllFilm {
-    public List<Film> listeFilm = new ArrayList<Film>();
-    public AllFilm() {
+public class AllFilms {
+    public ArrayList<Film> listeFilm = new ArrayList<Film>();
+    public AllFilms() {
 
     }
 
-    void addFilm() {
+    public void addFilm() {
         Film film = new Film();
         listeFilm.add(film);
     }
 
-    void getFilmBySupport() {
+    public void getFilmBySupport() {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Rechercher des film par support? (veuillez écrire le chiffre correspondant à votre choix");  
@@ -43,7 +43,7 @@ public class AllFilm {
 
         }
     }
-    void researchFilm() {
+    public void researchFilm() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ecrivez le nom du film");
         String nom = sc.nextLine();
@@ -58,14 +58,14 @@ public class AllFilm {
         System.out.println("Aucun film de ce nom n'a été trouvé");
     }
 
-    void GetFilmDispo() {
+    public void GetFilmDispo() {
         for (Film film : listeFilm) {
             if (!film.isLouer) {
                 film.ToString();
             }
         }
     }
-    void deleteFilm() {
+    public void deleteFilm() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ecrivez le nom du film a supprimer");
         String nom = sc.nextLine();
