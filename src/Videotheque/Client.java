@@ -1,4 +1,4 @@
-package Vidéothèque;
+package Videotheque;
 import java.util.*;
 
 public class Client {
