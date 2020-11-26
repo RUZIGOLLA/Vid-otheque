@@ -15,8 +15,8 @@ public class AllFilms {
     public void getFilmBySupport() {
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Rechercher des film par support? (veuillez écrire le chiffre correspondant à votre choix");  
-        System.out.print("1.K7    2.Clé Usb    3.Blue-Ray      4.DVD");
+        System.out.println("Rechercher des film par support? (veuillez écrire le chiffre correspondant à votre choix");
+        System.out.println("1.K7    2.Clé Usb    3.Blue-Ray      4.DVD");
         int i = sc.nextInt();
         String tmpString;
         switch (i) {
@@ -48,14 +48,17 @@ public class AllFilms {
         System.out.println("Ecrivez le nom du film");
         String nom = sc.nextLine();
 
+        boolean filmFound = false;
 
         for(Film film : listeFilm) {
-            if (film.Nom == nom) {
+            if (film.Nom.contains(nom)) {
                 film.ToString();
-                return;
+                filmFound = true;
             }
         }
-        System.out.println("Aucun film de ce nom n'a été trouvé");
+
+        if (!filmFound)
+            System.out.println("Aucun film de ce nom n'a été trouvé");
     }
 
 
