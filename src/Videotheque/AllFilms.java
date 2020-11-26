@@ -43,12 +43,17 @@ public class AllFilm {
 
         }
     }
-    void researchFilm(String nom) {
-        System.out.println("Aucun film de ce nom n'a été trouvé");
+    void researchFilm() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ecrivez le nom du film");
+        String nom = sc.nextLine();
+
 
         for(Film film : listeFilm) {
-            if (film.Nom == nom)
+            if (film.Nom == nom) {
                 film.ToString();
+                return;
+            }
         }
         System.out.println("Aucun film de ce nom n'a été trouvé");
     }
@@ -60,7 +65,10 @@ public class AllFilm {
             }
         }
     }
-    void deleteFilm(String nom) {
+    void deleteFilm() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ecrivez le nom du film a supprimer");
+        String nom = sc.nextLine();
         for(Film film : listeFilm) {
             if (film.Nom == nom)
                 listeFilm.remove(film);
