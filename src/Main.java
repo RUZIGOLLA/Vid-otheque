@@ -33,7 +33,15 @@ public class Main {
                 }
                 case 3 -> films.GetFilmDispo(false);
                 case 4 -> films.GetFilmDispo(true);
-                case 5 -> films.getFilmBySupport();
+                case 5 -> {
+                    ArrayList<Film> filmsBySupport = films.getFilmsBySupport();
+                    if (filmsBySupport.size() > 0) {
+                        for (Film film: filmsBySupport) {
+                            System.out.println(film.toString());
+                        }
+                    } else
+                        System.out.println("Il n'y a aucun film sous ce support.");
+                }
             }
             if (choice != 9)
                 pressEnter();

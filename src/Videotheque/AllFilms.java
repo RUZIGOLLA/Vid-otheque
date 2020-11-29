@@ -12,7 +12,8 @@ public class AllFilms {
         listeFilm.add(film);
     }
 
-    public void getFilmBySupport() {
+    public ArrayList<Film> getFilmsBySupport() {
+        ArrayList<Film> films = new ArrayList<Film>();
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Rechercher des film par support? (veuillez écrire le chiffre correspondant à votre choix");
@@ -39,9 +40,9 @@ public class AllFilms {
         }
         for(Film film : listeFilm) {
             if (film.Type == tmpString)
-               film.toString();
-
+                films.add(film);
         }
+        return films;
     }
     public Film searchFilm() {
         Scanner sc = new Scanner(System.in);
