@@ -23,12 +23,20 @@ public class Main {
 
             switch (choice) {
                 case 1 -> films.addFilm();
-                case 2 -> films.researchFilm();
+                case 2 -> {
+                    Film film = films.searchFilm();
+                    if (film != null)
+                        System.out.println(film.toString());
+                    else
+                        System.out.println("Aucun film n'a été trouvé !");
+                    break;
+                }
                 case 3 -> films.GetFilmDispo(false);
                 case 4 -> films.GetFilmDispo(true);
                 case 5 -> films.getFilmBySupport();
             }
-            pressEnter();
+            if (choice != 9)
+                pressEnter();
         } while (choice != 9);
 
         clearConsole();

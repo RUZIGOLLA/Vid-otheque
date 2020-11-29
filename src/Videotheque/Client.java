@@ -34,6 +34,8 @@ public class Client {
         }
     }
 
+    public String getName() { return this.nom; }
+
     public List<Film> getFilms() {
         return this.films;
     }

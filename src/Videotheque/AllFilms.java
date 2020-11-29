@@ -39,33 +39,30 @@ public class AllFilms {
         }
         for(Film film : listeFilm) {
             if (film.Type == tmpString)
-               film.ToString();
+               film.toString();
 
         }
     }
-    public void researchFilm() {
+    public Film searchFilm() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ecrivez le nom du film");
         String nom = sc.nextLine();
 
-        boolean filmFound = false;
 
         for(Film film : listeFilm) {
             if (film.Nom.contains(nom)) {
-                film.ToString();
-                filmFound = true;
+                return film;
             }
         }
+        return null;
 
-        if (!filmFound)
-            System.out.println("Aucun film de ce nom n'a été trouvé");
     }
 
 
     public void GetFilmDispo(Boolean bool) {
         for (Film film : listeFilm) {
             if (film.isLouer == bool) {
-                film.ToString();
+                film.toString();
             }
         }
     }

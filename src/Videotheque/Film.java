@@ -1,5 +1,6 @@
 package Videotheque;
 import java.util.*;
+import java.text.*;
 
 public class Film {
     public String Nom;
@@ -18,12 +19,12 @@ public class Film {
         Real = sc.nextLine();
         System.out.print("Quelle est l'annee de sortie du film? ");
         AnneeSortie = sc.nextLine();
-        getType();
+        setType();
         
-        System.out.println("Le film {#Nom} à bien été crée");
+        System.out.println(MessageFormat.format("Le film {0} à bien été crée", Nom));
     }
 
-    public void getType() {
+    public void setType() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Quelle est le type de support du film? (veuillez écrire le chiffre correspondant à votre choix");
@@ -45,7 +46,9 @@ public class Film {
         }
     }
 
-    public void ToString() {
-        System.out.println("#{Nom} #{Acteur} #{AnneeSortie} #{Realisateur} #{Type}");
+    public String toString() {
+        return MessageFormat.format("Nom: {0}, Acteur: {1}, Année: {2}, Réal.: {3}, Support: {4}", this.Nom, this.Acteur, this.AnneeSortie, this.Real, this.Type);
     }
+
+    public String getName() { return this.Nom; }
 }
