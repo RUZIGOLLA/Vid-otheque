@@ -60,12 +60,14 @@ public class AllFilms {
     }
 
 
-    public void GetFilmDispo(Boolean bool) {
+    public ArrayList<Film> GetFilmDispo(Boolean bool) {
+        ArrayList<Film> films = new ArrayList<Film>();
         for (Film film : listeFilm) {
             if (film.isLouer == bool) {
-                film.toString();
+                films.add(film);
             }
         }
+        return films;
     }
     public void deleteFilm() {
         Scanner sc = new Scanner(System.in);

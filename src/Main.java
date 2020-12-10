@@ -31,8 +31,18 @@ public class Main {
                         System.out.println("Aucun film n'a été trouvé !");
                     break;
                 }
-                case 3 -> films.GetFilmDispo(false);
-                case 4 -> films.GetFilmDispo(true);
+                case 3 -> {
+                    ArrayList<Film> filmsDispo = films.GetFilmDispo(false);
+                    for (Film film : filmsDispo) {
+                        System.out.println(film.toString());
+                    }
+                }
+                case 4 -> {
+                    ArrayList<Film> filmsDispo = films.GetFilmDispo(true);
+                    for (Film film : filmsDispo) {
+                        System.out.println(film.toString());
+                    }
+                }
                 case 5 -> {
                     ArrayList<Film> filmsBySupport = films.getFilmsBySupport();
                     if (filmsBySupport.size() > 0) {

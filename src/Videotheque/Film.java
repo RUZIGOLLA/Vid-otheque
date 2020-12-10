@@ -20,7 +20,7 @@ public class Film {
         System.out.print("Quelle est l'annee de sortie du film? ");
         AnneeSortie = sc.nextLine();
         setType();
-        
+        isLouer = false;
         System.out.println(MessageFormat.format("Le film {0} à bien été crée", Nom));
     }
 
