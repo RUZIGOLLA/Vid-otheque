@@ -3,5 +3,8 @@
 3. Liste des films disponibles
 4. Liste des films loués
 5. Liste des films par support
+6. Ajouter un client
+7. Louer un film pour un client
+8. Lister les films loués par un client
 
 9. Exit

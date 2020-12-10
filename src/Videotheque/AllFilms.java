@@ -3,9 +3,11 @@ import java.util.*;
 
 public class AllFilms {
     public ArrayList<Film> listeFilm = new ArrayList<Film>();
-    public AllFilms() {
-
+    public AllFilms(ArrayList<Film> films) {
+        if (films != null)
+            listeFilm = films;
     }
+    public AllFilms(){}
 
     public void addFilm() {
         Film film = new Film();
@@ -46,7 +48,7 @@ public class AllFilms {
     }
     public Film searchFilm() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ecrivez le nom du film");
+        System.out.print("Ecrivez le nom du film : ");
         String nom = sc.nextLine();
 
 

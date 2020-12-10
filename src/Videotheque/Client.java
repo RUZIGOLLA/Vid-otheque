@@ -7,7 +7,7 @@ public class Client {
     private String adresse;
     private String mail;
     private Integer limitFilms;
-    private ArrayList<Film> films;
+    private ArrayList<Film> films = new ArrayList<Film>();
 
     public Client() {
         Scanner sc = new Scanner(System.in);
@@ -28,6 +28,7 @@ public class Client {
     public boolean louer(Film film) {
         if (this.films.size() < this.limitFilms) {
             this.films.add(film);
+            film.isLouer = true;
             return true;
         } else {
             return false;

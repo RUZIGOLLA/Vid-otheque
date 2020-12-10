@@ -5,6 +5,7 @@ import java.io.*;
 public class Main {
     public List<Integer> arrianePath = new ArrayList<>();
     public static AllFilms films = new AllFilms();
+    public static AllClients clients = new AllClients();
 
     public static void main(String[] args) {
         mainMenu();
@@ -19,7 +20,7 @@ public class Main {
                 clearConsole();
                 showMenu("mainMenu.txt");
                 choice = convertStringToInt(fs.nextLine());
-            } while (choice == null || (choice < 1 || choice > 5) && choice != 9);
+            } while (choice == null && choice != 9);
 
             switch (choice) {
                 case 1 -> films.addFilm();
@@ -38,9 +39,12 @@ public class Main {
                     }
                 }
                 case 4 -> {
-                    ArrayList<Film> filmsDispo = films.GetFilmDispo(true);
-                    for (Film film : filmsDispo) {
-                        System.out.println(film.toString());
+                    List<Film> filmsLouer;
+                    for (Client client : clients.listeClients) {
+                        filmsLouer = client.getFilms();
+                        for (Film film : filmsLouer) {
+                            System.out.println(film.toString() + " | Client : " + client.getName());
+                        }
                     }
                 }
                 case 5 -> {
@@ -52,6 +56,21 @@ public class Main {
                     } else
                         System.out.println("Il n'y a aucun film sous ce support.");
                 }
+                case 6 -> {
+                    Client client = clients.addClient();
+                    System.out.println("Client " + client.getName() + " à bien été créé.");
+                }
+                case 7 -> {
+                    AllFilms filmsDispo = new AllFilms(films.GetFilmDispo(false));
+                    clients.louerFilm(filmsDispo);
+                }
+                case 8 -> {
+                    Client client = clients.searchClient();
+                    for (Film film : client.getFilms()){
+                        System.out.println(film.toString());
+                    }
+                }
+                default -> {}
             }
             if (choice != 9)
                 pressEnter();
